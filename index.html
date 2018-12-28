@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>A HAPPY NEW YEAR! 2019</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin:0px; overflow:hidden;">
+    <a-scene embedded arjs="debugUIEnabled:false;">
+        <a-assets>
+            <a-asset-item id="bike" src="/m/Bike.gltf"></a-asset-item>
+            <a-asset-item id="boar" src="/m/Mesh_Boar.gltf"></a-asset-item>
+        </a-assets>
+        <a-marker>
+            <a-entity>
+                <a-entity position="-2 0 0" scale="0.0025 0.0025 0.0025" rotation="0 0 0" gltf-model="#bike">
+                </a-entity>
+                <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+            </a-entity>
+            <a-entity>
+                <a-entity position="2 0 0" scale="0.025 0.025 0.025" rotation="0 180 0" gltf-model="#boar">
+                </a-entity>
+                <a-animation attribute="rotation" dur="10000" fill="backwards" to="0 360 0" repeat="indefinite"></a-animation>
+            </a-entity>
+            <a-text value="A Happy New Year!!!" position=" 0 0 0" rotation="-90 0 0" color="#F8A0DE">
+                <a-animation attribute="rotation" dur="1000" fill="backwards" to="90 0 0" repeat="indefinite"></a-animation>
+            </a-text>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
